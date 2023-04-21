@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <title>Trang Chủ</title>
+    <style> 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Tahoma !important;
+    }
+    a {
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
+    header {
+        display: flex;
+        padding: 12px 50px;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(170, 170, 170);
+    }
+
+    .search-bar {
+        flex: 3;
+    }
+
+    .search-bar button {
+        position: relative;
+        right: 23px;
+    }
+    .menu-top {
+        flex: 2;
+    }
+
+    .menu-top ul {
+        display: flex;
+    }
+
+    .menu-top ul li {
+        padding: 0 12px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    header img{
+        border-radius: 50px;
+        display: block;
+        margin-left: 10%;
+        margin-right: auto;
+        width: 80%;
+    }
+    section h1{
+        height: auto;
+        text-align: center;
+        padding: 20px 0;
+        color: dimgrey;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+  
+    section .middle-box ul li{
+        border-collapse: collapse;
+        width: 40%;
+        display: flex;
+        justify-content: left;
+        margin: 50px 400px; 
+        margin-top: 10px;
+    }
+    html{
+        background: url(https://demoda.vn/wp-content/uploads/2022/02/background-trang-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .box-pic img {
+        width: 250px;
+        height: 300px;
+        margin-top: 75px;
+        display: flex;
+    }
+    .menu-top ul li a {
+        color: #333;
+        position: relative;
+    }
+ 
+    .circle {
+        background: #456BD9;
+        border: 180px solid #e7eff6;
+        border-radius: 50%;
+        box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+        height: 5em;
+        width: 5em;
+        margin-left: 1250px; 
+        display: flex;    
+    }
+     
+    .anh{
+        width: 60px;
+        margin-right: 100px;
+              
+    }
+    .middle-box {
+        display: flex;
+    }
+  
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container"></div>
+            <div class="search-bar">
+               <form action="">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+               </form>
+            </div>
+            <div class="menu-top">
+                <ul>
+                    <li><a href="/trang-chu">Trang Chủ</a></li>
+                    <li><a href="/lich-hoc">Lịch học</a></li>
+                    <li><a href="/ket-qua">Kết quả</a></li>
+                    <li><a href="/dang-nhap">Đăng xuất</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="../public/img/logo9.png" alt="#"  class="anh">
+            </div>
+    </header>
+    <section>
+            <div class="middle-box">
+                <div>
+                    <h1>Thông tin sinh viên</h1>
+                    <ul>
+                        <li> MSSV: <%= dataUser.mssv %></li> 
+                        <li> Họ và tên: <%= dataUser.hovaten %></li>
+                        <li> Chuyên ngành: <%= dataUser.chuyennganh %></li>
+                        <li> Lớp: <%= dataUser.Malop %></li>
+                        <li> Dân tộc: <%= dataUser.dantoc %></li>
+                    </ul>                    
+                </div>
+                <div class="box-pic">       
+                    <img src="<%= "../public/img/2051150172.png" %>" alt="Ảnh">
+                </div> 
+            </div>
+            
+    </section>
+    
+</body>  
+</html>
