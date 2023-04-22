@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/Webtruong', {
+mongoose.connect('mongodb://localhost:27017/Webtruong', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -44,5 +44,18 @@ const point = new Schema ({
 
 const pointModel = mongoose.model('point',point);
 
-module.exports = {AccountModel,UserModel,pointModel}
+const lichhoc = new Schema ({
+    mssv: String,
+    tenMH: String,
+    lop: String,
+    cahoc: Number,
+    phong: String,
+    GV: String
+}, {
+    collection: 'Lichhoc'
+});
+
+const lichhocModel = mongoose.model('lichhoc',lichhoc)
+
+module.exports = {AccountModel,UserModel,pointModel,lichhocModel}
 

@@ -1,7 +1,7 @@
 var express = require('express')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
-var {AccountModel,UserModel,pointModel} = require('./Database/connectDB')
+var {AccountModel,UserModel,pointModel,lichhocModel} = require('./Database/connectDB')
 //var jwt = require('jsonwebtoken')
 var configViewEngine = require('./viewEngine')
 var app = express();
@@ -67,7 +67,19 @@ app.get('/trang-chu', (req,res,next) => {
 
 // render ra trang lịch học
 app.get('/lich-hoc', (req,res,next) => {
-    res.render('../views/lichhoc.ejs')
+    lichhocModel.find({
+        mssv: req.cookies.mssv
+    })
+    .then(data => {
+        if(data) {
+            res.render('../views/lichhoc.ejs',{dataLichhoc: data})
+        }else(
+            console.log(err)
+        );
+    })
+    .catch(err => {
+        res.status(500).json('Loi server')
+    })
 })
 
 // hiển thị giao diện kết quả và lấy dữ liệu từ cookie để compare với db

@@ -63,6 +63,7 @@
         color: dimgrey;
         font-size: 30px;
         text-transform: uppercase;
+        margin-left: 55%;
     }
   
     section .middle-box ul li{
@@ -70,8 +71,8 @@
         width: 40%;
         display: flex;
         justify-content: left;
-        margin: 50px 400px; 
-        margin-top: 10px;
+        margin: 40px 400px; 
+        margin-top: 50px;
     }
     html{
         background: url(https://demoda.vn/wp-content/uploads/2022/02/background-trang-1.jpg);
@@ -81,7 +82,7 @@
     .box-pic img {
         width: 250px;
         height: 300px;
-        margin-top: 75px;
+        margin-top: 125px;
         display: flex;
     }
     .menu-top ul li a {
@@ -99,7 +100,9 @@
         margin-left: 1250px; 
         display: flex;    
     }
-     
+    .middle-box ul {
+        margin-left: -130px;
+    }     
     .anh{
         width: 60px;
         margin-right: 100px;
@@ -146,9 +149,9 @@
                         <li> Lớp: <%= dataUser.Malop %></li>
                         <li> Dân tộc: <%= dataUser.dantoc %></li>
                     </ul>                    
-                </div>
+                </div>  
                 <div class="box-pic">       
-                    <img src="<%= "../public/img/2051150172.png" %>" alt="Ảnh">
+                    <img src= "../public/img/<%= dataUser.mssv %>.png"  alt="Ảnh">
                 </div> 
             </div>
             
